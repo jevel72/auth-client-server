@@ -1,0 +1,24 @@
+<h2>Вход в систему</h2>
+<form #form="ngForm" [formGroup]="loginForm" (ngSubmit)="login(form.value)">
+    <label for="login">Логин: </label>
+    <input formControlName="login" type="text" id="login">
+    <ng-container *ngIf="controls['login'].hasError('required') && controls['login'].touched">
+        <p>Введите логин!</p>
+    </ng-container>
+    <ng-container *ngIf="controls['login'].hasError('pattern') && controls['login'].dirty">
+        <p>Некорректно введён логин</p>
+    </ng-container>
+    <label for="password">Пароль: </label>
+    <input formControlName="password" type="password" id="password">
+    <ng-container *ngIf="controls['password'].hasError('required') && controls['password'].touched">
+        <p>Введите пароль!</p>
+    </ng-container>
+    <ng-container *ngIf="controls['password'].hasError('pattern') && controls['password'].dirty">
+        <p>Некорректный пароль</p>
+    </ng-container>
+    <div class="nomatter">
+        <label for="save">Сохранить пароль </label>
+        <input formControlName="save" type="checkbox" id="save">
+    </div>
+    <button type="submit" [disabled]="form.invalid">Войти</button>
+</form>

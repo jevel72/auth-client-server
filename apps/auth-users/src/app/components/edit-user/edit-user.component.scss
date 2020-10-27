@@ -1,0 +1,67 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    margin: auto;
+    form, div {
+        display: flex;
+        flex-direction: column;
+        max-width: 50%;
+        padding: 20px;
+        margin: 10px auto;
+        label {
+            color: rgb(19, 167, 19);
+        }
+        input, button {
+            display: block;
+            padding: 15px;
+            margin: 10px;
+            min-width: 30em;
+        }
+    }
+}
+
+form {
+    background-color: aliceblue;
+}
+
+button {
+    background-color: rgb(223, 80, 45);
+    color: white;
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    &:hover {
+        background-color: white;
+        color: rgb(223, 80, 45);
+    }
+}
+
+h2 {
+    margin: 50px auto;
+    color: white;
+}
+
+h3 {
+    color: white;
+    margin-left: 50px;
+}
+
+@media(max-width: 1200px) {
+    form input, button {
+        min-width: 2em;
+    }
+}
+
+.permission {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    button {
+        color: rgb(190, 190, 190);
+        background-color: rgb(83, 86, 238);
+    }
+    div {
+        margin-right: 190px;
+    }
+}

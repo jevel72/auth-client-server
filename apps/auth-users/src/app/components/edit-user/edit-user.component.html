@@ -1,0 +1,29 @@
+<h2>Редактирование пользователя</h2>
+<form  *ngIf="user" #form="ngForm" [formGroup]="editUser" (ngSubmit)="edit(form.value)">
+    <label for="login">Логин: </label>
+    <input formControlName="login" type="text" id="login">
+    <label for="firstname">Имя: </label>
+    <input formControlName="firstname" type="text" id="firstname">
+    <label for="lastname">Фамилия: </label>
+    <input formControlName="lastname" type="text" id="lastname">
+    <label for="password">Пароль: </label>
+    <input formControlName="password" type="password" id="password">
+    <button type="submit" [disabled]="form.invalid">Сохранить</button>
+    <button type="reset" (click)="reset()">Отмена</button>
+</form>
+<div class="permission">
+    <div *ngIf="user">
+        <ng-container *ngIf="user.status !== 'admin' && currentUser.status === 'admin'">
+            <button (click)="givePermissions('admin') && currentUser.status === 'admin'">Дать права админа</button>
+        </ng-container>
+        <ng-container *ngIf="user.status === 'admin'">
+            <button (click)="givePermissions('user')">
+                Отобрать права админа у пользователя
+            </button>
+        </ng-container>
+        <ng-container *ngIf="user.status !== 'admin'">
+            <button (click)="deleteUser()">Удалить пользователя</button>
+        </ng-container>
+    </div>
+    <button routerLink="/users">Назад</button>
+</div>

@@ -1,0 +1,40 @@
+<h2>Регистрация</h2>
+<form #form="ngForm" [formGroup]="registerForm" (ngSubmit)="register(form.value)">
+  <label for="username">Логин: </label>
+  <input formControlName="login" type="text" id="username">
+  <ng-container *ngIf="controls['login'].hasError('required') && controls['login'].touched">
+    <p>Введите логин!</p>
+  </ng-container>
+  <ng-container *ngIf="controls['login'].hasError('pattern') && controls['login'].dirty">
+    <p>Логин введён неверно</p>
+  </ng-container>
+  <label for="firstname">Имя: </label>
+  <input formControlName="firstname" type="text" id="firstname">
+  <ng-container *ngIf="controls['firstname'].hasError('required') && controls['firstname'].touched">
+    <p>Введите имя!</p>
+  </ng-container>
+  <ng-container *ngIf="controls['firstname'].hasError('pattern') && controls['firstname'].dirty">
+    <p>Имя введено неверно, либо не на русском</p>
+  </ng-container>
+  <label for="lastname">Фамилия: </label>
+  <input formControlName="lastname" type="text" id="lastname">
+  <ng-container *ngIf="controls['lastname'].hasError('required') && controls['lastname'].touched">
+    <p>Введите фамилию!</p>
+  </ng-container>
+  <ng-container *ngIf="controls['lastname'].hasError('pattern') && controls['lastname'].dirty">
+    <p>Фамилия введена неверно, либо не на русском</p>
+  </ng-container>
+  <label for="password">Пароль: </label>
+  <input formControlName="password" type="password" id="password">
+  <ng-container *ngIf="controls['password'].hasError('required') && controls['password'].touched">
+    <p>Введите пароль!</p>
+  </ng-container>
+  <ng-container *ngIf="controls['password'].hasError('pattern') && controls['password'].dirty">
+    <p>Пароль не соответствует требованиям (минимум 1 цифра и 1 заглавная буква</p>
+  </ng-container>
+  <div id="idontlikethat">
+    <label for="save" id="dfsf">Сохранить пароль: </label>
+    <input formControlName="save" type="checkbox" id="save">
+  </div>
+  <button type="submit" [disabled]="form.invalid">Зарегистрироваться</button>
+</form>

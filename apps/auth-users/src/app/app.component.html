@@ -1,8 +1,23 @@
-<div style="text-align: center;">
-  <h1>Welcome to auth-users!</h1>
-  <img
-    width="450"
-    src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png"
-  />
-</div>
-<div>Message: {{ hello$ | async | json }}</div>
+<mat-list role="list" class="menu">
+  <mat-list-item *ngIf="!userLoggedIn">
+    <button mat-raised-button routerLink="/login">
+      Войти
+    </button>
+  </mat-list-item>
+  <mat-list-item *ngIf="!userLoggedIn">
+    <button mat-raised-button routerLink="/register">
+      Регистрация
+    </button>
+  </mat-list-item>
+  <mat-list-item routerLink="/">
+    <button mat-raised-button>
+      На главную
+    </button>
+  </mat-list-item>
+  <mat-list-item *ngIf="userLoggedIn">
+    <button class="logout-button" mat-raised-button (click)="logOut()">
+      Выйти
+    </button>
+  </mat-list-item>
+</mat-list>
+<router-outlet></router-outlet>

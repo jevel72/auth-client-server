@@ -1,0 +1,39 @@
+<h2>Пользователи</h2>
+<table>
+    <thead>
+        <th>ID</th>
+        <th>Никнейм</th>
+        <th>Имя</th>
+        <th>Фамилия</th>
+        <th>Админ</th>
+        <ng-container *ngIf="currentUser.status === 'admin'">
+            <th>Удалить</th>
+        </ng-container>
+        <th>Редактировать</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{ user.id }}</td>
+            <td>{{ user.login }}</td>
+            <td>{{ user.firstname }}</td>
+            <td>{{ user.lastname }}</td>
+            <td>{{ user.status === 'admin' ? 'Да' : 'Нет' }}</td>
+            <ng-container *ngIf="currentUser.status === 'admin'">
+                <td *ngIf="user.status !== 'admin'">
+                    <button mat-raised-button (click)="delete(user.login)">X</button>
+                </td>
+            </ng-container>
+            <ng-container *ngIf="currentUser.status === 'admin' || currentUser.login === user.login">
+                <td>
+                    <button mat-raised-button routerLink="/edit-user" [queryParams]="{ user: user.login }">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                </td>
+            </ng-container>
+        </tr>
+    </tbody>
+</table>
+<div class="searchinput">
+    <input [formControl]="search" type="text" (keydown.enter)="filter()">
+    <button (click)="filter()">Фильтрация по логину</button>
+</div>

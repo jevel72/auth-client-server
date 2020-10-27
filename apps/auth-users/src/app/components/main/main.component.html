@@ -1,0 +1,7 @@
+<h1>Главная страница</h1>
+<ng-container *ngIf="userLoggedIn">
+    <button mat-raised-button routerLink="/users">Просмотр пользователей</button>
+</ng-container>
+<ng-container *ngIf="userLoggedIn">
+    <button mat-raised-button routerLink="/profile">Личный кабинет</button>
+</ng-container>

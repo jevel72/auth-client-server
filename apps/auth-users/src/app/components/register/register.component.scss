@@ -1,0 +1,71 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+input {
+    width: 500px;
+    padding: 10px;
+    color: rgb(245, 124, 68);
+    outline: none;
+    margin: auto;
+}
+
+h2 {
+    color: white;
+    margin: 50px auto;
+}
+
+label {
+    margin: 15px auto;
+    margin-right: 60%;
+    color: white;
+}
+
+p {
+    background-color: rgba(238, 58, 58, 0.795);
+    color: white;
+    border-radius: 15px;
+    padding: 10px;
+    min-width: 250px;
+    margin: 15px auto;
+    text-align: center;
+}
+
+input[type=checkbox] {
+    width: 30px;
+    height: 30px;
+}
+
+button {
+    margin: 10px auto;
+    padding: 10px 100px;
+    cursor: pointer;
+}
+
+#dfsf {
+    margin-right: 10px;
+}
+
+#idontlikethat {
+    display: flex;
+    flex-direction: row;
+    margin: 15px auto;
+    min-width: 200px;
+}
+
+button {
+    background-color: rgb(223, 80, 45);
+    color: white;
+    padding: 15px 80px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    &:hover {
+        background-color: white;
+        color: rgb(223, 80, 45);
+    }
+}

@@ -1,0 +1,36 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    margin: auto;
+}
+
+button {
+    background-color: rgb(228, 78, 52);
+    color: white;
+    max-width: 15em;
+    margin: auto;
+}
+
+h1 {
+    color: white;
+    margin: auto;
+}
+
+button, h1 {
+    margin: 15px auto;
+    padding: 10px;
+}
+
+h1 {
+    margin: 50px auto;
+}
+
+button {
+    padding: 20px;
+    transition: all .3s ease-in-out;
+    &:hover {
+        background-color: white;
+        color: rgb(228, 78, 52);
+    }
+}

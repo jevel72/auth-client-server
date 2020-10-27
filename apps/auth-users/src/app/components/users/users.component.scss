@@ -1,0 +1,51 @@
+:host {
+    display: flex;
+    margin: auto;
+    max-width: 80%;
+    flex-direction: column;
+}
+
+table, h2, .searchinput {
+    margin: auto;
+    display: block;
+}
+
+table {
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    margin: 15px auto;
+}
+
+td, tr, th {
+    padding: 10px;
+    color: rgb(40, 150, 40);
+}
+
+h2 {
+    color: white;
+}
+
+input {
+    padding: 10px;
+    outline: none;
+    color: rgb(243, 80, 40);
+}
+
+.searchinput button {
+    padding: 10px;
+    background-color: rgb(243, 80, 40);
+    outline: none;
+    color: rgb(247, 247, 247);
+    margin: 20px;
+    cursor: pointer;
+    border: none;
+    transition: all .3s ease-in-out;
+    &:hover {
+        background-color: white;;
+        color: rgb(243, 80, 40);
+    }
+}
+
+h2 {
+    margin: 50px auto;
+}

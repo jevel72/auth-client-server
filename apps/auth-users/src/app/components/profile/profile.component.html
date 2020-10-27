@@ -1,0 +1,10 @@
+<h2>Личный кабинет</h2>
+<div class="personal">
+    <h3>{{ user.login }}</h3>
+    <p>Ваш ID: {{ user.id }}</p>
+    <p>Ваше имя: {{ user.firstname }}</p>
+    <p>Ваша фамилия: {{ user.lastname }}</p>
+    <p>Статус админа: {{ user.status === 'admin' ? 'Да' : 'Нет' }}</p>
+</div>
+<button routerLink="/" mat-raised-button>Вернуться</button>
+<button (click)="delete()" mat-raised-button>Удалить себя</button>
