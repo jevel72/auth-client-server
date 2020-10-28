@@ -84,6 +84,10 @@ export class EditUserComponent implements OnInit, OnDestroy {
         'Content-Type': 'application/json',
       }),
     }).subscribe((user: User): void => {
+      if (user.id === this.currentUser.id) {
+        this.auth.currentUser = user;
+        localStorage.setItem('user', JSON.stringify(user));
+      }
       this.router.navigateByUrl('/users');
     });
   }

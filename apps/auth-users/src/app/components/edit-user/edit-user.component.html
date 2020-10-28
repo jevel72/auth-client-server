@@ -8,8 +8,12 @@
     <input formControlName="lastname" type="text" id="lastname">
     <label for="password">Пароль: </label>
     <input formControlName="password" type="password" id="password">
-    <button type="submit" [disabled]="form.invalid">Сохранить</button>
-    <button type="reset" (click)="reset()">Отмена</button>
+    <button type="submit" [disabled]="form.invalid">
+        Сохранить
+    </button>
+    <button type="reset" (click)="reset()">
+        Отмена
+    </button>
 </form>
 <div class="permission">
     <div *ngIf="user">

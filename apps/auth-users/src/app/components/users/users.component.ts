@@ -67,7 +67,6 @@ export class UsersComponent implements OnInit, OnDestroy {
 
   private _setUpSubscription(): void {
     this._usersSubscription = this._users.users$.subscribe((users: User[]): void  => {
-      console.log(users);
       this.users = users;
       this.usersReserved = [...this.users];
       this.cdr.detectChanges();
