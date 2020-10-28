@@ -3,7 +3,7 @@
 RUN
 
 ```
-nx run-many --target=auth-users,api --target=serve --parallel --maxParallel=2 --with-deps
+nx run-many --projects=auth-users,api --target=serve --parallel --maxParallel=2 --with-deps
 ```
 
 ADMIN
