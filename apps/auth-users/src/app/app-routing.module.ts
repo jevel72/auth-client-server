@@ -9,11 +9,9 @@ import { RegisterComponent } from './components/register/register.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
-import { RegisterGuard } from './guards/register.guard';
-import { UsersGuard } from './guards/users.guard';
-import { LoginGuard } from './guards/login.guard';
+import { UserLoggedInGuard } from './guards/user-logged-in.guard';
 import { EditUserGuard } from './guards/edit-user.guard';
-import { ProfileGuard } from './guards/profile.guard';
+import { UserLoggedOutGuard } from './guards/user-logged-out.guard';
 
 const MainRoute: Route = {
     path: '',
@@ -24,25 +22,25 @@ const MainRoute: Route = {
 const LoginRoute: Route = {
     path: 'login',
     component: LoginComponent,
-    canActivate: [LoginGuard],
+    canActivate: [UserLoggedInGuard],
 };
 
 const UsersRoute: Route = {
     path: 'users',
     component: UsersComponent,
-    canActivate: [UsersGuard],
+    canActivate: [UserLoggedOutGuard],
 };
 
 const RegisterRoute: Route = {
     path: 'register',
     component: RegisterComponent,
-    canActivate: [RegisterGuard],
+    canActivate: [UserLoggedInGuard],
 };
 
 const ProfileRoute: Route = {
     path: 'profile',
     component: ProfileComponent,
-    canActivate: [ProfileGuard],
+    canActivate: [UserLoggedOutGuard],
 };
 
 const EditUserRoute: Route = {
@@ -70,11 +68,9 @@ const routes: Routes = [
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule],
     providers: [
-        LoginGuard,
-        RegisterGuard,
         EditUserGuard,
-        UsersGuard,
-        ProfileGuard,
+        UserLoggedInGuard,
+        UserLoggedOutGuard,
     ],
 })
 export class AppRoutingModule {}

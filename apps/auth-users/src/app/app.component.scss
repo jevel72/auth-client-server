@@ -11,13 +11,15 @@ button {
   background-color:rgb(52, 211, 131);
 }
 
-.logout-button {
-  justify-self: flex-end;
-  margin-left: 92%;
+.logout-button, .to-main-button {
+  margin-left: auto;
 }
 
-@media(max-width: 1280px) {
-  .logout-button {
-    margin-left: 80%;
-  }
+.register-button {
+  margin-right: auto;
+}
+
+.sign-buttons {
+  display: flex;
+  flex-flow: row;
 }

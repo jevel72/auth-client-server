@@ -4,12 +4,12 @@ import { CanActivate, RouterStateSnapshot, ActivatedRouteSnapshot, Router } from
 import { AuthService } from '../services/auth.service';
 
 @Injectable()
-export class ProfileGuard implements CanActivate {
+export class UserLoggedOutGuard implements CanActivate {
     public constructor(
         private readonly router: Router,
         private readonly auth: AuthService,
     ) {}
-    
+
     public canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
         const userLoggedIn: boolean = this.auth.isUserLoggedIn();
         if (userLoggedIn) return true;

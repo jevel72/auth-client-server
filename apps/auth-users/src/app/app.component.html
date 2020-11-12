@@ -1,16 +1,18 @@
 <mat-list role="list" class="menu">
-  <mat-list-item *ngIf="!userLoggedIn">
-    <button mat-raised-button routerLink="/login">
-      Войти
-    </button>
-  </mat-list-item>
-  <mat-list-item *ngIf="!userLoggedIn">
-    <button mat-raised-button routerLink="/register">
-      Регистрация
-    </button>
-  </mat-list-item>
+  <div class="sign-buttons">
+    <mat-list-item *ngIf="!userLoggedIn">
+      <button mat-raised-button routerLink="/login">
+        Войти
+      </button>
+    </mat-list-item>
+    <mat-list-item *ngIf="!userLoggedIn">
+      <button mat-raised-button routerLink="/register" class="register-button">
+        Регистрация
+      </button>
+    </mat-list-item>
+  </div>
   <mat-list-item routerLink="/">
-    <button mat-raised-button>
+    <button mat-raised-button class="to-main-button">
       На главную
     </button>
   </mat-list-item>

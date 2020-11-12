@@ -22,13 +22,13 @@ export class EditUserComponent implements OnInit, OnDestroy {
 
   public user: User;
 
-  
+
   public editUser: FormGroup = new FormGroup({});
-  
+
   public controls: Record<string, AbstractControl>;
-  
+
   private _id: number;
-  
+
   private _status: string;
 
   private _userParams: string;
@@ -51,11 +51,11 @@ export class EditUserComponent implements OnInit, OnDestroy {
     this._setUpUser();
     this._setUpTitle();
   }
-  
+
   public ngOnDestroy(): void {
     this._userSubscription.unsubscribe();
   }
-  
+
   public deleteUser(): void {
     this.http.delete('/api/delete', {
       headers: new HttpHeaders({
@@ -68,7 +68,7 @@ export class EditUserComponent implements OnInit, OnDestroy {
   }
 
   public givePermissions(permission: string): void {
-    this.http.patch('/api/permission', { 
+    this.http.patch('/api/permission', {
       ...this.editUser.value,
       status: permission,
       id: this._id,
@@ -95,7 +95,7 @@ export class EditUserComponent implements OnInit, OnDestroy {
   public reset(): void {
     this._setUpUser();
   }
-  
+
   private _setUpParams(): void {
     this._userParams = this.route.snapshot.queryParamMap.get('user');
     this.router.navigateByUrl('/edit-user');

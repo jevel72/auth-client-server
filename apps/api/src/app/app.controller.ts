@@ -19,7 +19,7 @@ const state: Users = {
       login: 'cj',
       firstname: 'си',
       lastname: 'джей',
-      password: 'GroveStreetOneLove4',
+      password: 'youWin4',
       status: 'user',
     }
   ]
@@ -38,7 +38,10 @@ export class AppController {
   }
 
   @Post('login') public loginUser(@Body() user: Login): User | string {
-    const find: User = state.users.find((_user: User): boolean => _user.login === user.login);
+    const find: User = state.users.find((_user: User): boolean => {
+        return _user.login === user.login && _user.password === user.password;
+      }
+    );
     if (find) {
       return find;
     }
