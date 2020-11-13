@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Delete, Param, Query } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Delete, Query } from '@nestjs/common';
 
 import { User } from '../../../auth-users/src/app/interfaces/user.interface';
 import { Users } from '../../../auth-users/src/app/interfaces/users.interface';

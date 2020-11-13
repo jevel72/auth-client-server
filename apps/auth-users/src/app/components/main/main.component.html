@@ -1,4 +1,9 @@
 <h1>Главная страница</h1>
+<ng-containter *ngIf="!userLoggedIn">
+  <span class="non-login-text">
+    Юзер не залогинен, нечего показать
+  </span>
+</ng-containter>
 <ng-container *ngIf="userLoggedIn">
     <button mat-raised-button routerLink="/users">Просмотр пользователей</button>
 </ng-container>
